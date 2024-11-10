@@ -1,0 +1,28 @@
+<div mat-dialog-title>
+    <h1>Pack Price Form</h1>
+</div>
+<form [formGroup]="packForm" (ngSubmit)="onFormSbmit()">
+<div mat-dialog-content class="content">
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Type Pack Name</mat-label>
+            <input matInput type="text" placeholder="Ex. Family" formControlName="typepackName" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Abrv Packtype</mat-label>
+            <input matInput placeholder="Ex. Fam" formControlName="typepackAbrv" required>
+        </mat-form-field>
+    </div>
+
+    <div class="row">
+        <mat-form-field>
+            <mat-label>Order</mat-label>
+            <input matInput placeholder="Order Pack Price" type="number"  (input)="validatePositive($event)" formControlName="ordPacktype" required>
+          </mat-form-field>
+    </div>
+</div>
+<div mat-dialog-actions class="action">
+    <button mat-raised-button type="button" [mat-dialog-close]="false">cancel</button>
+    <button mat-raised-button color="primary" type="submit">{{data ? 'Update' : 'Save'}}</button>
+</div>
+</form>

@@ -1,0 +1,31 @@
+<div class="card border-primary mb-3">
+    <div class="card-header bg-primary text-white">Region Detail Component</div>
+    <div class="card-body">
+        <div *ngIf="region; else noRegions">
+            <h3>Region detail</h3>
+            <div class="card" style="width: 25em;">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>ID Pays: </strong>{{region.idPays}}</li>
+                    <li class="list-group-item"><strong>ID Region: </strong>{{region.idRegion}}</li>
+                    <li class="list-group-item"><strong>Name Region:</strong> {{region.regionName}}</li>
+                    <li class="list-group-item"><strong>Order Region:</strong> {{region.ordRegion}}</li>
+                    <li class="list-group-item"><strong>Reference User: </strong>{{region.refUser}}</li>
+                    <li class="list-group-item"><strong>Date Created: </strong>{{region.dtCreate | date:'short'}}</li>
+                    <li class="list-group-item"><strong>Date Modified: </strong>{{region.dtModif | date:'short'}}</li>
+                    <li class="list-group-item"><strong>Version: </strong>{{region.version}}</li>
+                </ul>
+            </div>
+        </div>
+        <div *ngIf="isWaiting" class="text-center">
+            <div class="spinner-border" role="status"></div>
+            <h4>Loading... Please wait!</h4>
+          </div>
+      
+        <ng-template #noRegions>
+            <p>Region not found</p>
+        </ng-template>
+    </div>
+</div>
+<button class="btn btn-primary" (click)="onRegions()">
+    Go to Regions
+</button>

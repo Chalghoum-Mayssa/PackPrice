@@ -1,0 +1,25 @@
+<div class="container">
+  <h1 class="text-center mt-2 mb-2">Welcome to my {{title}}</h1>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
+      <a class="navbar-brand" routerLink="/">{{title|uppercase}}</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+              <li  class="nav-item">
+                  <a class="nav-link" routerLink="/pack-price" outerLinkActive="active">pack price  <span class="sr-only">(current)</span></a>
+              </li>
+              <li  class="nav-item">
+                  <a class="nav-link" routerLink="/regions" outerLinkActive="active">Regions</a>
+              </li>
+
+          </ul>
+
+      </div>
+  </nav>
+  <router-outlet></router-outlet>
+
+</div>

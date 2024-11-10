@@ -1,0 +1,73 @@
+.main-body {
+  padding-top: 10px;
+  margin: 0 auto;
+  max-width: 1248px;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.mat-tool {
+  color: #ffffff;
+  background-color: #007bff;
+}
+
+.card-header {
+  background-color: #007bff;
+  color: #ffffff;
+  font-size: 1.2em;
+}
+
+.table-container {
+  margin-top: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #007bff;
+  color: rgb(0, 0, 0);
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.mat-icon-button {
+  cursor: pointer;
+}
+
+.no-data {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2em;
+  color: #888;
+}
+
+.filter-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #f5f3f3 !important;
+  border-radius: 5px;
+  font-size: 1em;
+}
+.container{
+  width: 100%;
+  height: 100%;
+}

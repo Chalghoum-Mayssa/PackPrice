@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="header">
+  </div>
+
+  <div class="main-body">
+    <button class="btn btn-primary mb-3" (click)="openAddEditPackForm()">Add Pack Price</button>
+    <div class="card border-primary mb-3">
+      <div class="card-header bg-primary text-white">Pack Prices</div>
+      <div class="card-body">
+        <mat-form-field>
+          <mat-label>Select PACK Name</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Ex. pack family" #input>
+        </mat-form-field>
+
+        <div class="table-container">
+          <table mat-table [dataSource]="dataSource" matSort>
+            <ng-container matColumnDef="position">
+              <th mat-header-cell *matHeaderCellDef> Num </th>
+              <td mat-cell *matCellDef="let row; let i = index"> {{i + 1}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="typepackName">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Type Pack Name</th>
+              <td mat-cell *matCellDef="let row">{{row.typepackName}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="dtCreate">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Date Create</th>
+              <td mat-cell *matCellDef="let row">{{row.dtCreate | date:'dd/MM/yyyy'}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="dtModif">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Date Modif</th>
+              <td mat-cell *matCellDef="let row">{{row.dtModif | date:'dd/MM/yyyy'}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="ordPacktype">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Order Pack Type</th>
+              <td mat-cell *matCellDef="let row">{{row.ordPacktype}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="refUser">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Ref User</th>
+              <td mat-cell *matCellDef="let row">{{row.refUser}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="typepackAbrv">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Type Pack Abrv</th>
+              <td mat-cell *matCellDef="let row">{{row.typepackAbrv}}</td>
+            </ng-container>
+
+            
+
+            <ng-container matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef>Actions</th>
+              <td mat-cell *matCellDef="let row">
+                <div class="actions">
+                  <button mat-icon-button color="primary" (click)="OpenEditForm(row)">
+                    <mat-icon>edit</mat-icon>
+                  </button>
+                  <button mat-icon-button color="warn" (click)="deletePackPrice(row.id.idEntite, row.id.idTypepack)">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </div>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="9">No data matching the filter "{{input.value}}"</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
